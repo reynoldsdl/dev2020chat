@@ -26,13 +26,16 @@
 	var casenumber = url.searchParams.get("casenumber"); 
 	console.log(casenumber);
 	var subject = url.searchParams.get("subject"); 
-	var email = url.searchParams.get("email"); 
-	var fname = url.searchParams.get("fname"); 
+	console.log(subject);
+	var email = url.searchParams.get("Email"); 
+	console.log(email);
+	var fname = url.searchParams.get("FirstName"); 
 	console.log(fname);
-	var lname = url.searchParams.get("lname"); 
+	var lname = url.searchParams.get("LastName"); 
+	console.log(lname);
         var f = document.getElementById("FirstName");
-	f.value = fname;
-	console.log(f);
+	f.value = fname.value;
+	console.log(f.value);
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
