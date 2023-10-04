@@ -16,6 +16,8 @@
 <input name="First Name" id=FirstName >
 <input name="Last Name" id=LastName >
 <input name="Email" id=Email >
+<input name="Subject" id=Subject>
+<input name="CaseNumber" id=CaseNumber>
 
 	
 <script type='text/javascript'>
@@ -23,19 +25,39 @@
 	var url_string = window.location.href;
 	var url = new URL(url_string);
 	console.log(url_string); 
-	var casenumber = url.searchParams.get("casenumber"); 
+	
+	var casenumber = url.searchParams.get("CaseNumber"); 
 	console.log(casenumber);
-	var subject = url.searchParams.get("subject"); 
+	var cn = document.getElementById("CaseNumber"):
+	cn.value = casenumber;
+	console.log(cn.value);
+	
+	var subject = url.searchParams.get("Subject"); 
 	console.log(subject);
+	var s = document.getElementById("Subject");
+	s.value = subject ; 
+	console.log(s.value);
+	
 	var email = url.searchParams.get("Email"); 
 	console.log(email);
+	var em = document.getElementById("Email");
+	em.value = email ; 
+	console.log(em.value);
+	
 	var fname = url.searchParams.get("FirstName"); 
 	console.log(fname);
-	var lname = url.searchParams.get("LastName"); 
-	console.log(lname);
         var f = document.getElementById("FirstName");
 	f.value = fname;
 	console.log(f.value);
+	
+	var lname = url.searchParams.get("LastName"); 
+	console.log(lname);		
+	var ln = document.getElementById("LastName");
+	ln.value = lname;
+	console.log(ln.value);
+
+
+	
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
