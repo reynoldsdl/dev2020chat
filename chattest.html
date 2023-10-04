@@ -12,6 +12,11 @@
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
+
+	var url_string = window.location.href;
+	var url = newl URL(url_string);
+	var case = urlsearchParams.get("case");
+	console.log(case);
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
