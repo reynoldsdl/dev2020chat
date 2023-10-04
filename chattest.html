@@ -76,39 +76,24 @@
 		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
 		//embedded_svc.snippetSettingsFile.autoOpenPostChat = true; // or false
 		//embedded_svc.settings.prepopulatedPrechatFields = {	};
+		embedded_svc.settings.extraPrechatInfo = [{
+  			"entityFieldMaps": [{
+    			"doCreate": false,
+    			"doFind": true,
+    			"fieldName": "CaseNumber",
+    			"isExactMatch": true,
+    			"label": "Case Number"
+  		}],
+  			"entityName": "Case"
+		}];
+		
 		embedded_svc.settings.prepopulatedPrechatFields = {
 			FirstName: fname,
     			LastName: lname,
     			Email: email,
     			Subject: subject,
 			CaseNumber: casenumber};
-embedded_svc.settings.extraPrechatInfo = [{
-  "entityFieldMaps": [{
-    "doCreate": false,
-    "doFind": true,
-    "fieldName": "LastName",
-    "isExactMatch": true,
-    "label": "Last Name"
-  }, {
-    "doCreate": false,
-    "doFind": true,
-    "fieldName": "Email",
-    "isExactMatch": true,
-    "label": "Email"
-  }],
-  "entityName": "Contact"
-}];
 
-embedded_svc.settings.extraPrechatInfo = [{
-  "entityFieldMaps": [{
-    "doCreate": false,
-    "doFind": true,
-    "fieldName": "CaseNumber",
-    "isExactMatch": true,
-    "label": "CaseNumber"
-  }],
-  "entityName": "Case"
-}];
 
 		
 		//embedded_svc.settings.extraPrechatInfo = [{
