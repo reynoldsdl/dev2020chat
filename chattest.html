@@ -82,6 +82,34 @@
     			Email: email,
     			Subject: subject,
 			CaseNumber: casenumber};
+embedded_svc.settings.extraPrechatInfo = [{
+  "entityFieldMaps": [{
+    "doCreate": false,
+    "doFind": true,
+    "fieldName": "LastName",
+    "isExactMatch": true,
+    "label": "Last Name"
+  }, {
+    "doCreate": false,
+    "doFind": true,
+    "fieldName": "Email",
+    "isExactMatch": true,
+    "label": "Email"
+  }],
+  "entityName": "Contact"
+}];
+
+embedded_svc.settings.extraPrechatInfo = [{
+  "entityFieldMaps": [{
+    "doCreate": false,
+    "doFind": true,
+    "fieldName": "CaseNumber",
+    "isExactMatch": true,
+    "label": "CaseNumber"
+  }],
+  "entityName": "Case"
+}];
+
 		
 		//embedded_svc.settings.extraPrechatInfo = [{
   		//	"entityFieldMaps": [{
