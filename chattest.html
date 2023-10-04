@@ -22,8 +22,9 @@
 	var email = url.searchParams.get("email"); 
 	var fname = url.searchParams.get("fname"); 
 	var lname = url.searchParams.get("lname"); 
-        var f = document.getElementById("FirstName");
-	f.value = fname;
+        //var f = document.getElementById("FirstName");
+	//f.value = fname;
+	console.log(fname);
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
@@ -94,7 +95,7 @@
 		initESW('https://service.force.com');
 	}
 </script>
-<input type="hidden" name="liveagent.prechat.query:CaseNumber" value="Case,Case.CaseNumber"/>	
+<input type="text" name="liveagent.prechat.query:CaseNumber" value="Case,Case.CaseNumber"/>	
 
 </body>
 </html>
