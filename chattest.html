@@ -18,6 +18,11 @@
 	console.log(url_string); 
 	var casenumber = url.searchParams.get("casenumber"); 
 	console.log(casenumber);
+	var subject = url.searchParams.get("subject"); 
+	var email = url.searchParams.get("email"); 
+	var fname = url.searchParams.get("fname"); 
+	var lname = url.searchParams.get("lname"); 
+
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
@@ -34,6 +39,26 @@
 			// Returns a valid button ID.
 		//};
 		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+		embedded_svc.snippetSettingsFile.autoOpenPostChat = true; // or false
+		embedded_svc.settings.prepopulatedPrechatFields = {
+
+		};
+		embedded_svc.settings.extraPrechatInfo = [{
+  			"entityFieldMaps": [{
+    			"doCreate": false,
+    			"doFind": true,
+    			"fieldName": "LastName",
+    			"isExactMatch": true,
+    			"label": "Last Name"
+  			}, {
+    			"doCreate": false,
+    			"doFind": true,
+    			"fieldName": "Email",
+    			"isExactMatch": true,
+    			"label": "Email"
+  			}],
+  			"entityName": "Contact"
+			}];		
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
 
@@ -68,6 +93,7 @@
 		initESW('https://service.force.com');
 	}
 </script>
+<input type="hidden" name="liveagent.prechat.query:CaseNumber" value="Case,Case.CaseNumber"/>	
 
 </body>
 </html>
