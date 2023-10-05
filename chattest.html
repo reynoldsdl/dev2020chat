@@ -71,7 +71,7 @@
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 
-        embedded_svc.settings.defaultMinimizedText = 'IO'; //(Defaults to Chat with an Expert)
+        	embedded_svc.settings.defaultMinimizedText = 'IO'; //(Defaults to Chat with an Expert)
 		embedded_svc.settings.disabledMinimizedText = 'OO'; //(Defaults to Agent Offline)
 
         //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
@@ -162,6 +162,12 @@
 				isOfflineSupportEnabled: false
 			}
 		);
+		
+		embedded_svc.addEventHandler("onSettingsCallCompleted", function(data) {
+    			console.log("onSettingsCallCompleted event was fired. Agent availability status is " + data.isAgentAvailable ? "online": "offline");
+    			embedded_svc.bootstrapEmbeddedService();
+		});
+		
 	};
 
 	if (!window.embedded_svc) {
